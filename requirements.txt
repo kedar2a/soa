@@ -1,0 +1,5 @@
+Django==1.10a1
+ipython==4.2.0
+djangorestframework
+# django-pipeline
+# django-pipeline-browserify
