@@ -102,6 +102,20 @@ class MurtiStatus(models.Model):
         return self.murti_status
     
 
+class Buyer(models.Model):
+
+    buyer_name = models.CharField(max_length=50)
+    phone_no   = models.CharField(max_length=14, null=True)
+    address    = models.TextField(null=True) 
+
+    class Meta:
+        verbose_name = "Buyer"
+        verbose_name_plural = "Buyers"
+
+    def __str__(self):
+        return self.buyer_name
+    
+
 class Murti(models.Model):
 
     murti_name  = models.CharField(max_length=50)
@@ -117,6 +131,11 @@ class Murti(models.Model):
     note        = models.TextField(null=True)
     tags        = models.ManyToManyField(MurtiTag)
     images      = models.ManyToManyField(MurtiImage)
+    featured    = models.BooleanField(default=False)
+
+    sold_price  = models.PositiveIntegerField(null=True)
+    buyer       = models.ForeignKey(Buyer, on_delete=models.CASCADE, null=True)
+    booked_at   = models.DateTimeField(null=True)
 
     class Meta:
         verbose_name = "Murti"

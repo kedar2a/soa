@@ -29,5 +29,9 @@ class MurtiImageAdmin(admin.ModelAdmin):
 
 @admin.register(MurtiStatus)
 class MurtiStatusAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Buyer)
+class BuyerAdmin(admin.ModelAdmin):
 	pass
 
