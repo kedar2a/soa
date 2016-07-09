@@ -69,7 +69,7 @@ class MurtiTag(models.Model):
 
 class MurtiImage(models.Model):
 
-    idol_image = models.FileField(upload_to='idol-images/', default='idol-images/None/no-img.jpg')
+    idol_image = models.FileField(upload_to='idol-images/', default='idol-images/None/no-img.png')
 
     class Meta:
         verbose_name = "MurtiImage"
@@ -79,7 +79,10 @@ class MurtiImage(models.Model):
         return self.idol_image.name
 
     def image_tag(self):
-        return '<a href="%s"><img src="%s" height="100" /></a>' % (self.idol_image.url, self.idol_image.url)
+        if self.idol_image:
+            return '<a href="%s"><img src="%s" height="100" /></a>' % (self.idol_image.url, self.idol_image.url)
+        # else:
+        #     return self.idol_image.name            
 
     image_tag.short_description = 'Image'
     image_tag.allow_tags = True

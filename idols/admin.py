@@ -25,9 +25,10 @@ class MurtiTagAdmin(admin.ModelAdmin):
 
 @admin.register(MurtiImage)
 class MurtiImageAdmin(admin.ModelAdmin):
-	fields = ( 'image_tag', )
+	# fields = ( 'image_tag', )
 	readonly_fields = ('image_tag',)
-	list_display = ('idol_image', 'image_tag',)
+	# list_display = ('idol_image', 'image_tag',)
+	pass
 
 @admin.register(MurtiStatus)
 class MurtiStatusAdmin(admin.ModelAdmin):
