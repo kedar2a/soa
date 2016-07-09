@@ -78,6 +78,12 @@ class MurtiImage(models.Model):
     def __str__(self):
         return self.idol_image.name
 
+    def image_tag(self):
+        return '<a href="%s"><img src="%s" height="100" /></a>' % (self.idol_image.url, self.idol_image.url)
+
+    image_tag.short_description = 'Image'
+    image_tag.allow_tags = True
+
 
 class Status:
     AVAILABLE = 'Available'
