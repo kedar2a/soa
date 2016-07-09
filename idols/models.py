@@ -8,7 +8,7 @@ class MurtiCategory(models.Model):
 
     murti_category_name = models.CharField(max_length=50, unique=True)
     category_code = models.CharField(max_length=2)
-    feature = models.TextField(null=True)  # max_length=5000
+    feature = models.TextField(blank=True, default='')
 
     class Meta:
         verbose_name = "MurtiType"
@@ -39,7 +39,7 @@ class MaterialCategory(models.Model):
     '''
 
     material_category_name  = models.CharField(max_length=50)
-    dissolution_time_per_kg = models.DecimalField(max_digits=4, decimal_places=2, null=True)
+    dissolution_time_per_kg = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
     ingredients             = models.ManyToManyField(Ingredient)
     # tests_passed  = [char]  # e.g: t1, t2, t3
     # weight_per_kg = models.DecimalField(max_digits=4, decimal_places=2, null=True)
@@ -105,8 +105,8 @@ class MurtiStatus(models.Model):
 class Buyer(models.Model):
 
     buyer_name = models.CharField(max_length=50)
-    phone_no   = models.CharField(max_length=14, null=True)
-    address    = models.TextField(null=True) 
+    phone_no   = models.CharField(max_length=14, blank=True, default='')
+    address    = models.TextField(blank=True, default='') 
 
     class Meta:
         verbose_name = "Buyer"
@@ -120,22 +120,22 @@ class Murti(models.Model):
 
     murti_name  = models.CharField(max_length=50)
     murti_id    = models.CharField(max_length=2, unique=True)
-    altname     = models.CharField(max_length=50, null=True)
-    sp_feature  = models.TextField(null=True)
-    height      = models.DecimalField(max_digits=4, decimal_places=2, null=True)
-    weight      = models.DecimalField(max_digits=5, decimal_places=2, null=True)
-    price       = models.PositiveIntegerField(null=True)
+    altname     = models.CharField(max_length=50, blank=True, default='')
+    sp_feature  = models.TextField(blank=True, default='')
+    height      = models.DecimalField(max_digits=4, decimal_places=2, blank=True, null=True)
+    weight      = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
+    price       = models.PositiveIntegerField(blank=True, null=True)
     category    = models.ForeignKey(MurtiCategory, on_delete=models.CASCADE, null=True)
     material    = models.ForeignKey(MaterialCategory, on_delete=models.CASCADE, null=True)
     status      = models.CharField(max_length=10, choices=Status.CHOICES, default=Status.AVAILABLE)
-    note        = models.TextField(null=True)
+    note        = models.TextField(blank=True, default='')
     tags        = models.ManyToManyField(MurtiTag)
     images      = models.ManyToManyField(MurtiImage)
     featured    = models.BooleanField(default=False)
 
-    sold_price  = models.PositiveIntegerField(null=True)
-    buyer       = models.ForeignKey(Buyer, on_delete=models.CASCADE, null=True)
-    booked_at   = models.DateTimeField(null=True)
+    sold_price  = models.PositiveIntegerField(blank=True, null=True)
+    buyer       = models.ForeignKey(Buyer, on_delete=models.CASCADE, blank=True, null=True)
+    booked_at   = models.DateTimeField(blank=True, null=True)
 
     class Meta:
         verbose_name = "Murti"
