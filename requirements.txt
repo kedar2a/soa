@@ -1,7 +1,9 @@
 Django==1.10a1
 backports.shutil-get-terminal-size==1.0.0
+boto==2.41.0
 decorator==4.0.10
 dj-database-url==0.4.1
+django-storages==1.4.1
 gunicorn==19.6.0
 ipdb==0.10.1
 ipython==4.2.0
@@ -12,4 +14,3 @@ ptyprocess==0.5.1
 simplegeneric==0.8.1
 traitlets==4.2.1
 whitenoise==3.2
-psycopg2
