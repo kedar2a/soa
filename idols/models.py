@@ -1,6 +1,27 @@
 from django.db import models
 
 
+class MurtiImage(models.Model):
+
+    idol_image = models.FileField(upload_to='idol-images/', default='idol-images/None/no-img.png')
+
+    class Meta:
+        verbose_name = "MurtiImage"
+        verbose_name_plural = "MurtiImages"
+
+    def __str__(self):
+        return self.idol_image.name
+
+    def image_tag(self):
+        if self.idol_image:
+            return '<a href="%s"><img src="%s" height="100" /></a>' % (self.idol_image.url, self.idol_image.url)
+        # else:
+        #     return self.idol_image.name            
+
+    image_tag.short_description = 'Image'
+    image_tag.allow_tags = True
+
+
 class MurtiCategory(models.Model):
     '''Main category includes:
     dagdusheth, titawala etc.
@@ -9,6 +30,7 @@ class MurtiCategory(models.Model):
     murti_category_name = models.CharField(max_length=50, unique=True)
     category_code = models.CharField(max_length=2)
     feature = models.TextField(blank=True, default='')
+    images = models.ForeignKey(MurtiImage, null=True, blank=True)
 
     class Meta:
         verbose_name = "MurtiType"
@@ -65,27 +87,6 @@ class MurtiTag(models.Model):
 
     def __str__(self):
         return self.tag
-
-
-class MurtiImage(models.Model):
-
-    idol_image = models.FileField(upload_to='idol-images/', default='idol-images/None/no-img.png')
-
-    class Meta:
-        verbose_name = "MurtiImage"
-        verbose_name_plural = "MurtiImages"
-
-    def __str__(self):
-        return self.idol_image.name
-
-    def image_tag(self):
-        if self.idol_image:
-            return '<a href="%s"><img src="%s" height="100" /></a>' % (self.idol_image.url, self.idol_image.url)
-        # else:
-        #     return self.idol_image.name            
-
-    image_tag.short_description = 'Image'
-    image_tag.allow_tags = True
 
 
 class Status:
