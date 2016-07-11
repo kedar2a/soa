@@ -35,6 +35,7 @@ class MurtiCategory(models.Model):
     class Meta:
         verbose_name = "MurtiCategory"
         verbose_name_plural = "MurtiCategorys"
+        managed = True
 
     def __str__(self):
         return self.murti_category_name
