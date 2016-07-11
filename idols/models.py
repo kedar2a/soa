@@ -30,11 +30,11 @@ class MurtiCategory(models.Model):
     murti_category_name = models.CharField(max_length=50, unique=True)
     category_code = models.CharField(max_length=2)
     feature = models.TextField(blank=True, default='')
-    images = models.ForeignKey(MurtiImage, null=True, blank=True)
+    images = models.ForeignKey(MurtiImage, blank=True, null=True)
 
     class Meta:
-        verbose_name = "MurtiType"
-        verbose_name_plural = "MurtiTypes"
+        verbose_name = "MurtiCategory"
+        verbose_name_plural = "MurtiCategorys"
 
     def __str__(self):
         return self.murti_category_name
