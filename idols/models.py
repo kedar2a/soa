@@ -35,7 +35,6 @@ class MurtiCategory(models.Model):
     class Meta:
         verbose_name = "MurtiCategory"
         verbose_name_plural = "MurtiCategorys"
-        managed = True
 
     def __str__(self):
         return self.murti_category_name
@@ -99,18 +98,18 @@ class Status:
     )
 
 
-class MurtiStatus(models.Model):
-    '''Following are possible options:
-    Available, booked, under_development etc.
-    '''
-    murti_status = models.CharField(max_length=20)
+# class MurtiStatus(models.Model):
+#     '''Following are possible options:
+#     Available, booked, under_development etc.
+#     '''
+#     murti_status = models.CharField(max_length=20)
 
-    class Meta:
-        verbose_name = "MurtiStatus"
-        verbose_name_plural = "MurtiStatus"
+#     class Meta:
+#         verbose_name = "MurtiStatus"
+#         verbose_name_plural = "MurtiStatus"
 
-    def __str__(self):
-        return self.murti_status
+#     def __str__(self):
+#         return self.murti_status
     
 
 class Buyer(models.Model):
