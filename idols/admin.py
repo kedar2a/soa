@@ -30,9 +30,9 @@ class MurtiImageAdmin(admin.ModelAdmin):
 	# list_display = ('idol_image', 'image_tag',)
 	pass
 
-@admin.register(MurtiStatus)
-class MurtiStatusAdmin(admin.ModelAdmin):
-    pass
+# @admin.register(MurtiStatus)
+# class MurtiStatusAdmin(admin.ModelAdmin):
+#     pass
 
 @admin.register(Buyer)
 class BuyerAdmin(admin.ModelAdmin):
