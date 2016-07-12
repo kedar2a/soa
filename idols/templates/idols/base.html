@@ -5,15 +5,22 @@
 <head>
 	<title></title>
 	<link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
+
+	{% block head %}
+		
+	{% endblock head %}
+
 </head>
 <body>
 
-<script type="text/javascript" src="{% static 'app.js' %}"></script>
-{{test}}
+	{# {{test}} #}
+	<h1 style="color:palegoldenrod">Shree Omkar Arts</h1>
 
-<script type="text/javascript">
-	// alert(a)
-</script>
+	{% block body %}
+		
+	{% endblock body %}
+
+	<script type="text/javascript" src="{% static 'app.js' %}"></script>
 
 </body>
 </html>
