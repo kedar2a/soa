@@ -1,0 +1,33 @@
+body {
+	background: url("pumpkin-orange-backgrounds.jpg") center / cover;
+}
+
+/* pagewide background*/
+.layout-transparent {
+}
+
+
+/*menu*/
+.layout-transparent .mdl-layout__header,
+.layout-transparent .mdl-layout__drawer-button {
+	/* This background is dark, so we set text to white. Use 87% black instead if
+	 your background is light. */
+	/*background-color: red;   */
+	/*opacity: 0.7;*/
+	color: white;
+}
+
+.layout-transparent .mdl-layout__header:hover,
+.layout-transparent .mdl-layout__drawer-button:hover {
+	background-color: #E91E63;   
+	transition: 1s all;
+}
+
+.layout-transparent .mdl-layout__header .mdl-navigation__link.active {
+	border-top: solid 5px #9C27B0;
+	/*color: #9C27B0;*/
+	color: #333;
+}
+	
+.layout-transparent .mdl-layout__drawer-button {
+}
