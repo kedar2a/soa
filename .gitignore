@@ -1,6 +1,9 @@
-db.sqlite3
+.env
+*.sublime-workspace
 
+db.sqlite3
 __pycache__
 *.pyc
 
 staticfiles/*
+media/
