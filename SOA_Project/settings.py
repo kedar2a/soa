@@ -159,6 +159,6 @@ try:
 
     MEDIA_URL = 'http://%s.s3.amazonaws.com/idol-images/' % AWS_STORAGE_BUCKET_NAME
 
-    from local_settings import *
+    from SOA_Project.local_settings import *
 except ImportError:
     pass

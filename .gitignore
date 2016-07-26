@@ -1,5 +1,6 @@
 .env
 *.sublime-workspace
+local_settings.py
 
 db.sqlite3
 __pycache__
