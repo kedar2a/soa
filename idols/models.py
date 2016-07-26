@@ -129,7 +129,7 @@ class Buyer(models.Model):
 class Murti(models.Model):
 
     murti_name  = models.CharField(max_length=50)
-    murti_id    = models.CharField(max_length=2, unique=True)
+    murti_id    = models.CharField(max_length=20, unique=True)
     altname     = models.CharField(max_length=50, blank=True, default='')
     sp_feature  = models.TextField(blank=True, default='')
     height      = models.DecimalField(max_digits=4, decimal_places=2, blank=True, null=True)
