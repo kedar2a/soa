@@ -26,8 +26,16 @@ body {
 .layout-transparent .mdl-layout__header .mdl-navigation__link.active {
 	border-top: solid 5px #9C27B0;
 	/*color: #9C27B0;*/
-	color: #333;
+	/*color: #333;*/
 }
 	
 .layout-transparent .mdl-layout__drawer-button {
+}
+
+
+footer.mdl-mini-footer{
+	position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
 }

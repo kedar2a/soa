@@ -1,0 +1,27 @@
+{% extends 'idols/base.html' %}
+{% load static %}
+
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+
+
+	<div class="mdl-grid">
+		<div class="mdl-cell mdl-cell--6-col">
+			Name: {{murti.murti_name}}
+			<br/>
+			id : {{murti.murti_id}}
+			<br/>
+			height : {{murti.height}}
+			<br/>
+			weight : {{murti.weight}}
+			<br/>
+			price : {{murti.price}} 
+
+		</div>
+		<div class="mdl-cell mdl-cell--12-col">
+			<img src='{{murti.images.first.idol_image.url|default:"/static/official-logo-med.png"}}' border="0" alt="" style="width:90%; padding-left:5%;">
+		</div>
+	</div>
+{% endblock body %}

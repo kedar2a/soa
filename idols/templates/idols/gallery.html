@@ -2,8 +2,86 @@
 {% load static %}
 
 {% block head %}
+	<style>
+		.align-center{
+		    margin-left: auto;
+		    margin-right: auto;
+		    display: block;
+		}
+
+		.mdl-card__media {
+			background-color: lightgray
+		}
+	</style>
 {% endblock head %}
 
 {% block body %}
+<!--
+<div class="mdl-grid">
+	<div class="mdl-cell mdl-cell--4-col">
+		<a href="">
+			<div class="mdl-card mdl-shadow--16dp">
+				<div class="mdl-card__media"><img src='{% static "slide-2.jpg" %}' height="200px" border="0"
+					alt="">
+				</div>
+				<div class="mdl-card__title">
+					The Sky Tower is an observation
+				</div>
+			</div>
+		</a>
+	</div>
+	<div class="mdl-cell mdl-cell--4-col">
+		<a href="">
+			<div class="mdl-card mdl-shadow--16dp">
+				<div class="mdl-card__media"><img src='{% static "slide-2.jpg" %}' height="200px" border="0"
+					alt="">
+				</div>
+				<div class="mdl-card__title">
+					The Sky Tower is an observation
+				</div>
+			</div>
+		</a>
+	</div>
+	<div class="mdl-cell mdl-cell--4-col">
+		<a href="">
+			<div class="mdl-card mdl-shadow--16dp">
+				<div class="mdl-card__media"><img src='{% static "slide-2.jpg" %}' height="200px" border="0"
+					alt="">
+				</div>
+				<div class="mdl-card__title">
+					The Sky Tower is an observation
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+-->
+
+		<div class="mdl-grid">
+	{% for mc in all_murti_category %}
+
+	
+	{% if url_name == 'murti_category' %}
+		<a href="{% url url_name mc.category_code %}">
+	{% elif url_name == 'murti_detail' %}
+		<a href="{% url url_name mc.category.category_code mc.id %}">
+	{% endif %}
+	<div class="mdl-cell mdl-cell--4-col">
+			<div class="mdl-card mdl-shadow--16dp">
+				<div class="mdl-card__media">
+					<img class="align-center" src='{{mc.images.first.idol_image.url|default:"/static/official-logo-med.png"}}' height="200px" border="0" alt="">
+				</div>
+				<div class="mdl-card__title">
+					{{mc.murti_category_name}}
+					{{mc.murti_name}}
+				</div>
+			</div>
+	</div>
+	{% if url_name %}
+		</a>
+	{% endif %}
+
+	{% endfor %}
+		</div>
 
 {% endblock body %}
