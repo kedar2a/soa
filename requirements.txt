@@ -2,11 +2,11 @@ backports.shutil-get-terminal-size==1.0.0
 boto==2.41.0
 decorator==4.0.10
 dj-database-url==0.4.1
-Django==1.10a1
+Django==1.11.2
 django-storages==1.4.1
 gunicorn==19.6.0
 ipdb==0.10.1
-ipython==4.2.0
+ipython==6.1.0
 ipython-genutils==0.1.0
 pexpect==4.1.0
 pickleshare==0.7.2
