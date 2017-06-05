@@ -1,5 +1,5 @@
+import datetime
 from django.db import models
-
 
 class MurtiImage(models.Model):
 
@@ -97,7 +97,6 @@ class Status:
       (BOOKED, 'Booked'),
     )
 
-
 # class MurtiStatus(models.Model):
 #     '''Following are possible options:
 #     Available, booked, under_development etc.
@@ -142,6 +141,7 @@ class Murti(models.Model):
     tags        = models.ManyToManyField(MurtiTag)
     images      = models.ManyToManyField(MurtiImage)
     featured    = models.BooleanField(default=False)
+    year = models.IntegerField(choices=((2017, 2017), (2016, 2016)), default=datetime.datetime.now().year)
 
     sold_price  = models.PositiveIntegerField(blank=True, null=True)
     buyer       = models.ForeignKey(Buyer, on_delete=models.CASCADE, blank=True, null=True)
