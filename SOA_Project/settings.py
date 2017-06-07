@@ -25,8 +25,7 @@ SECRET_KEY = 'ax$k%&-07tl(-gotjs_hc@tcan+rmos9pn5drj266ygzhfz=r@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['kedar.tech', 'www.kedar.tech', '0.0.0.0']
 
 # Application definition
 
