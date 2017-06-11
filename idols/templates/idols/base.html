@@ -7,10 +7,10 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Eco friendly ganapati idols made out of Papermache.">
+  <meta name="description" content="Eco friendly ganapati idols made out of Papermache. Paper Ganesh. Paper Ganesha">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-	<title>Paper Ganesh</title>
+	<title>Paper Ganesh {% block site_title %} {% endblock site_title %} </title>
 
 	<link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
   
@@ -20,7 +20,7 @@
   -->
   
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-deep_orange.min.css" />
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-deep_orange.min.css">
 	<link rel="stylesheet" type="text/css" href="{% static 'soa-style.css' %}">
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
@@ -38,19 +38,33 @@
       <!-- top menu panel -->
       <header class="mdl-layout__header mdl-layout__header--transparent">
         <div class="mdl-layout__header-row">
+
           <!-- Title -->
-          <span class="mdl-layout-title">Paper Ganesh</span>
+          <span class="mdl-layout-title">
+            <a class="no-anchor" href="{% url 'home_slider' %}"> Paper Ganesh</a>
+          </span>
+
           <!-- <img src="{% static 'small-logo.png' %}"></a> -->
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
           <!-- Navigation -->
           <nav class="mdl-navigation">
-            <a class="mdl-navigation__link active" href="{% url 'home_slider' %}"><h5>Home</h5></a>
-            <a class="mdl-navigation__link" href="{% url 'gallery' %}"><h5>Gallery</h5></a>
-            <a class="mdl-navigation__link" href="{% url 'aim' %}"><h5>Aim</h5></a>
-            <a class="mdl-navigation__link" href="{% url 'media' %}"><h5>Media</h5></a>
-            <a class="mdl-navigation__link" href="{% url 'team' %}"><h5>Team</h5></a>
-            <a class="mdl-navigation__link" href="{% url 'contact' %}"><h5>Contact</h5></a>
+            <!-- <a class="mdl-navigation__link active" href="{% url 'home_slider' %}"><h5>Home</h5></a> -->
+            <a class="mdl-navigation__link {% if title == 'Gallery' %}active{% endif %}" href="{% url 'gallery' %}">
+              <h5>Gallery</h5>
+            </a>
+            <a class="mdl-navigation__link {% if title == 'Aim' %}active{% endif %}" href="{% url 'aim' %}">
+              <h5>Aim</h5>
+            </a>
+            <a class="mdl-navigation__link {% if title == 'Media' %}active{% endif %}" href="{% url 'media' %}">
+              <h5>Media</h5>
+            </a>
+            <a class="mdl-navigation__link {% if title == 'Team' %}active{% endif %}" href="{% url 'team' %}">
+              <h5>Team</h5>
+            </a>
+            <a class="mdl-navigation__link {% if title == 'Contact' %}active{% endif %}" href="{% url 'contact' %}">
+              <h5>Contact</h5>
+            </a>
           </nav>
         </div>
       </header>
@@ -59,7 +73,7 @@
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Paper Ganesh</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="{% url 'home_slider' %}">Home</a>
+          <!-- <a class="mdl-navigation__link" href="{% url 'home_slider' %}">Home</a> -->
           <a class="mdl-navigation__link" href="{% url 'gallery' %}">Gallery</a>
           <a class="mdl-navigation__link" href="{% url 'aim' %}">Aim</a>
           <a class="mdl-navigation__link" href="{% url 'media' %}">Media</a>
@@ -79,6 +93,7 @@
 
     {% block body %}
     {% endblock body %}
+
     <!-- <script type="text/javascript" src="{% static 'app.js' %}"></script> -->
 
     <!-- <footer class="mdl-mini-footer">

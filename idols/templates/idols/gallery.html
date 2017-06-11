@@ -1,17 +1,11 @@
 {% extends 'idols/base.html' %}
 {% load static %}
 
+{% block site_title %} - {{title}} {% endblock site_title %}
+
 {% block head %}
 	<style>
-		.align-center{
-		    margin-left: auto;
-		    margin-right: auto;
-		    display: block;
-		}
 
-		.mdl-card__media {
-			background-color: lightgray
-		}
 	</style>
 {% endblock head %}
 
@@ -57,7 +51,7 @@
 </div>
 -->
 
-		<div class="mdl-grid">
+	<div class="mdl-grid">
 	{% for mc in all_murti_category %}
 
 	
@@ -82,6 +76,6 @@
 	{% endif %}
 
 	{% endfor %}
-		</div>
+	</div>
 
 {% endblock body %}

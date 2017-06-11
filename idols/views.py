@@ -1,22 +1,20 @@
 from django.http import HttpResponse
 from django.template import loader
 
+from idols.models import MurtiCategory, Murti
+
 
 def home_slider(request):
     template = loader.get_template('idols/home-slider.html')
-    context = {
-        'test': 'test',
-    }
+    context = {}
     return HttpResponse(template.render(context, request))
 
 
 def gallery(request):
-
-    from idols.models import MurtiCategory
-
     all_murti_category = MurtiCategory.objects.all()
     template = loader.get_template('idols/gallery.html')
     context = {
+        'title': 'Gallery',
         'all_murti_category': all_murti_category,
         'url_name': 'murti_category'
     }
@@ -25,7 +23,6 @@ def gallery(request):
 
 def murti_category(request, murti_category_code):
 
-    from idols.models import MurtiCategory, Murti
 
     template = loader.get_template('idols/gallery.html')
     murti_category_obj = MurtiCategory.objects.get(category_code=murti_category_code)
@@ -40,7 +37,6 @@ def murti_category(request, murti_category_code):
 
 def murti_detail(request, murti_category_code, m_id):
 
-    from idols.models import Murti
 
     template = loader.get_template('idols/murti-detail.html')
     murti_obj = Murti.objects.get(id=m_id)
@@ -54,7 +50,7 @@ def murti_detail(request, murti_category_code, m_id):
 def aim(request):
     template = loader.get_template('idols/aim.html')
     context = {
-        'test': 'test',
+        'title': 'Aim',
     }
     return HttpResponse(template.render(context, request))    
 
@@ -62,7 +58,7 @@ def aim(request):
 def media(request):
     template = loader.get_template('idols/media.html')
     context = {
-        'test': 'test',
+        'title': 'Media'
     }
     return HttpResponse(template.render(context, request))
 
@@ -70,7 +66,7 @@ def media(request):
 def team(request):
     template = loader.get_template('idols/team.html')
     context = {
-        'test': 'test',
+        'title': 'Team',
     }
     return HttpResponse(template.render(context, request))
 
@@ -78,7 +74,7 @@ def team(request):
 def contact(request):
     template = loader.get_template('idols/contact.html')
     context = {
-        'test': 'test',
+        'title': 'Contact',
     }
     return HttpResponse(template.render(context, request))
 
