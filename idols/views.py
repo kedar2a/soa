@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.template import loader
 
 from idols.models import MurtiCategory, Murti
+from SOA_Project.settings import MURTI_YEAR
 
 
 def home_slider(request):
@@ -26,7 +27,7 @@ def murti_category(request, murti_category_code):
 
     template = loader.get_template('idols/gallery.html')
     murti_category_obj = MurtiCategory.objects.get(category_code=murti_category_code)
-    all_category_murtis = Murti.objects.filter(category_id=murti_category_obj.id)
+    all_category_murtis = Murti.objects.filter(category_id=murti_category_obj.id, year=MURTI_YEAR)
 
     context = {
         'all_murti_category': all_category_murtis,

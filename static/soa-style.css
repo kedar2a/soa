@@ -19,7 +19,7 @@ body {
 
 .layout-transparent .mdl-layout__header:hover,
 .layout-transparent .mdl-layout__drawer-button:hover {
-	background-color: red;   
+	background-color: #EE2C2C;   
 	transition: 1s all;
 }
 
