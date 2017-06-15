@@ -6,7 +6,7 @@ class MurtiImage(models.Model):
     idol_image = models.FileField(upload_to='idol-images', default='idol-images/None/no-img.png')
 
     class Meta:
-        verbose_name = "MurtiImage"
+        verbose_name = "Murti Image"
         verbose_name_plural = "MurtiImages"
 
     def __str__(self):

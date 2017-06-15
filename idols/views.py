@@ -12,7 +12,7 @@ def home_slider(request):
 
 
 def gallery(request):
-    all_murti_category = MurtiCategory.objects.all()
+    all_murti_category = MurtiCategory.objects.all().order_by('murti_category_name')
     template = loader.get_template('idols/gallery.html')
     context = {
         'title': 'Gallery',
@@ -23,7 +23,6 @@ def gallery(request):
 
 
 def murti_category(request, murti_category_code):
-
 
     template = loader.get_template('idols/gallery.html')
     murti_category_obj = MurtiCategory.objects.get(category_code=murti_category_code)
