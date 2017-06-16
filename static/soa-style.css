@@ -52,6 +52,11 @@ footer.mdl-mini-footer{
     display: block;
 }
 
+
+.text-left{
+	text-align: left;
+}
+
 .mdl-card__media {
 	background-color: lightgray
 }
