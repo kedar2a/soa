@@ -56,21 +56,19 @@
 
 	
 	{% if url_name == 'murti_category' %}
-		<a href="{% url url_name mc.category_code %}">
+		<a class="mdl-cell mdl-cell--4-col" href="{% url url_name mc.category_code %}">
 	{% elif url_name == 'murti_detail' %}
-		<a href="{% url url_name mc.category.category_code mc.id %}">
+		<a class="mdl-cell mdl-cell--4-col" href="{% url url_name mc.category.category_code mc.id %}">
 	{% endif %}
-	<div class="mdl-cell mdl-cell--4-col">
-			<div class="mdl-card mdl-shadow--16dp">
+			<div class="mdl-card mdl-shadow--16dp align-center">
 				<div class="mdl-card__media">
-					<img class="align-center" src='{{mc.images.idol_image.url|default:"/static/official-logo-med.png"}}' height="200px" border="0" alt="">
+					<img class="align-center" src='{{mc.images.idol_image.url|default:"/static/official-logo-med.png"}}' height="200px" width=auto border="0" alt="">
 				</div>
 				<div class="mdl-card__title">
 					{{mc.murti_category_name}}
 					{{mc.murti_name}}
 				</div>
 			</div>
-	</div>
 	{% if url_name %}
 		</a>
 	{% endif %}
