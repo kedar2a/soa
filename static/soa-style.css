@@ -24,7 +24,7 @@ body {
 }
 
 .layout-transparent .mdl-layout__header .mdl-navigation__link.active {
-	border-top: solid 5px orange;
+	border-top: solid 5px #fff;
 	/*color: #9C27B0;*/
 	/*color: #333;*/
 }
