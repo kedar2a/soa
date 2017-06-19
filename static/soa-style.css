@@ -2,7 +2,7 @@ html *{
 	font-family: 'Lora', serif;
 }
 
-h3, h5{
+h3, h5, .mdl-layout-title > a{
 	font-weight: 700;
 }
 
