@@ -67,7 +67,11 @@ https://css-tricks.com/snippets/javascript/lazy-loading-images/
 	{% endif %}
 			<div class="mdl-card mdl-shadow--16dp align-center">
 				<div class="mdl-card__media">
-					<img class="align-center" src='{{mc.images.idol_image.url|default:"/static/official-logo-med.png"}}' height="200px" width=auto border="0" alt="">
+					<!--
+					{# <img class="align-center" src='{{mc.images.idol_image.url|default:"/static/official-logo-med.png"}}' height="200px" width=auto border="0" alt=""> #}
+					{# <img class="align-center" src='{{mc.images.first.idol_image.url|default:"/static/official-logo-med.png"}}' height="200px" width=auto border="0" alt=""> #}
+					-->
+					<img class="align-center" src='{% firstof mc.images.idol_image.url mc.images.first.idol_image.url "/static/official-logo-med.png" %}' height="200px" width=auto border="0" alt="">
 				</div>
 				<div class="mdl-card__title">
 					{{mc.murti_category_name}}
