@@ -1,0 +1,15 @@
+Image details:
+	- show image size in inches. without fraction.
+	- weight in kgs. without fraction.
+	- show rs sign for rupee.
+	- show medium size image.
+
+Gallery:
+	LEVEL 0:
+	LEVEL 1:
+		- show image on cards.
+
+- Devlok image
+- add video on landing
+- add media
+- add features from shree omkar arts
