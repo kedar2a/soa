@@ -7,9 +7,9 @@ Image details:
 Gallery:
 	LEVEL 0:
 	LEVEL 1:
-		- show image on cards.
+		- DONE: show image on cards.
 
 - Devlok image
-- add video on landing
+- P DONE: add video on landing
 - add media
 - add features from shree omkar arts

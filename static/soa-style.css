@@ -1,3 +1,14 @@
+html *{
+	font-family: 'Lora', serif;
+}
+
+h3, h5{
+	font-weight: 700;
+}
+
+p{
+	font-size: 16px;
+}
 body {
 	background: url("pumpkin-orange-backgrounds.jpg") center / cover;
 }
@@ -27,6 +38,7 @@ body {
 	border-top: solid 5px #fff;
 	/*color: #9C27B0;*/
 	/*color: #333;*/
+	font-weight: bold;
 }
 	
 .layout-transparent .mdl-layout__drawer-button {
@@ -55,6 +67,10 @@ footer.mdl-mini-footer{
 
 .text-left{
 	text-align: left;
+}
+
+.text-center{
+	text-align: center;
 }
 
 .mdl-card__media {

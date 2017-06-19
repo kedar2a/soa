@@ -17,8 +17,9 @@
   <!--
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
   -->
-  
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-deep_orange.min.css">
 	<link rel="stylesheet" type="text/css" href="{% static 'soa-style.css' %}">
@@ -33,7 +34,7 @@
   <div class="mdl-layout mdl-js-layout">
   
     <!-- transparent header that draws on top of the layout's background -->
-    <div class="layout-transparent mdl-layout mdl-js-layout">
+    <div style="z-index:100;" class="layout-transparent mdl-layout mdl-js-layout">
 
       <!-- top menu panel -->
       <header class="mdl-layout__header mdl-layout__header--transparent">
@@ -50,6 +51,9 @@
           <!-- Navigation -->
           <nav class="mdl-navigation">
             <!-- <a class="mdl-navigation__link active" href="{% url 'home_slider' %}"><h5>Home</h5></a> -->
+            <a class="mdl-navigation__link {% if title == 'Feature' %}active{% endif %}" href="{% url 'feature' %}">
+              <h5>Feature</h5>
+            </a>
             <a class="mdl-navigation__link {% if title == 'Gallery' %}active{% endif %}" href="{% url 'gallery' %}">
               <h5>Gallery</h5>
             </a>

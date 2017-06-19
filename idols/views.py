@@ -11,6 +11,14 @@ def home_slider(request):
     return HttpResponse(template.render(context, request))
 
 
+def feature(request):
+    template = loader.get_template('idols/feature.html')
+    context = {
+        'title': 'Feature',
+    }
+    return HttpResponse(template.render(context, request))    
+
+
 def gallery(request):
     all_murti_category = MurtiCategory.objects.all().order_by('murti_category_name')
     template = loader.get_template('idols/gallery.html')
