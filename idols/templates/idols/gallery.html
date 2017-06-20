@@ -5,7 +5,7 @@
 
 {% block head %}
 	<style>
-
+	.mdl-card{width: auto;}
 	</style>
 {% endblock head %}
 
@@ -61,9 +61,9 @@ https://css-tricks.com/snippets/javascript/lazy-loading-images/
 
 	
 	{% if url_name == 'murti_category' %}
-		<a class="mdl-cell mdl-cell--4-col" href="{% url url_name mc.category_code %}">
+		<a class="mdl-cell mdl-cell--3-col no-anchor" href="{% url url_name mc.category_code %}">
 	{% elif url_name == 'murti_detail' %}
-		<a class="mdl-cell mdl-cell--4-col" href="{% url url_name mc.category.category_code mc.id %}">
+		<a class="mdl-cell mdl-cell--3-col no-anchor" href="{% url url_name mc.category.category_code mc.id %}">
 	{% endif %}
 			<div class="mdl-card mdl-shadow--16dp align-center">
 				<div class="mdl-card__media">

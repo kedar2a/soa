@@ -74,5 +74,6 @@ footer.mdl-mini-footer{
 }
 
 .mdl-card__media {
-	background-color: lightgray
+	/*background-color: lightgray;*/
+	background: url('beige_paper.png') left top repeat;
 }

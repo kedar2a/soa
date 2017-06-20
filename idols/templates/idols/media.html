@@ -1,9 +1,155 @@
 {% extends 'idols/base.html' %}
 {% load static %}
 
+{% block site_title %} - {{title}} {% endblock site_title %}
+
 {% block head %}
+<style>
+  .demo-card-square.mdl-card {
+    /*width: 320px;*/
+    height: 320px;
+  }
+  .demo-card-square > .mdl-card__title {
+    color: #fff;
+    background:
+    /*url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;*/
+  }
+  .mdl-button{
+    text-transform: none;
+  }
+</style>
 {% endblock head %}
 
 {% block body %}
+
+<!-- Square card -->
+<div class="mdl-grid">
+    
+  <div class="mdl-cell mdl-cell--3-col demo-card-square mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-card--expand">
+    <video height="200px" src='{% static "Z-24-taas.mp4" %}'></video>
+    </div>
+    <div class="mdl-card__supporting-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Aenan convallis.
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        <b>Z 24 Taas</b>, <i>News Channel</i>
+      </a>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--3-col demo-card-square mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-card--expand">
+    <video height="200px" src='{% static "rohit-abp-news-video.mp4" %}'></video>
+    </div>
+    <div class="mdl-card__supporting-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Aenan convallis.
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        <b>ABP News</b>, <i>News Channel</i>
+      </a>
+    </div>
+  </div>
+  <div class="mdl-cell mdl-cell--3-col demo-card-square mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-card--expand">
+      <img class="align-center" src='{% static "93.5-radio.png" %}' height="200px" width=auto border="0" alt="">
+      <audio src='{% static "93.5-radio.mp3" %}'></audio>
+    </div>
+    <div class="mdl-card__supporting-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Aenan convallis.
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        <b>93.5</b>, <i>Big FM</i>
+      </a>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--3-col demo-card-square mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-card--expand">
+      <img class="align-center" src='{% static "92.7-radio.jpg" %}' height="150px" width="300px" width=auto border="0" alt="">
+      <audio src='{% static "92.7-radio.mp3" %}'></audio>
+    </div>
+    <div class="mdl-card__supporting-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Aenan convallis.
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        <b>92.7</b>, <i>Red FM</i>
+      </a>
+    </div>
+  </div>
+
+
+  <div class="mdl-cell mdl-cell--3-col demo-card-square mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-card--expand">
+      <img class="align-center" src='{% static "mumbai-mirror-thumbnail.png" %}' height="200px" width=auto border="0" alt="">
+    </div>
+    <div class="mdl-card__supporting-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Aenan convallis.
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        <b>Mumbai Mirror</b>, <i>English Newspaper</i>
+      </a>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--3-col demo-card-square mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-card--expand">
+      <img class="align-center" src='{% static "dna-thumbnail.png" %}' height="200px" width=auto border="0" alt="">
+    </div>
+    <div class="mdl-card__supporting-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Aenan convallis.
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        <b>DNA</b>, <i>English Newspaper</i>
+      </a>
+    </div>
+  </div>
+
+
+
+  <div class="mdl-cell mdl-cell--3-col demo-card-square mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-card--expand">
+      <img class="align-center" src='{% static "loksatta.jpg" %}' height="200px" width=auto border="0" alt="">
+    </div>
+    <div class="mdl-card__supporting-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Aenan convallis.
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        <b>Loksatta</b>, <i>Marathi Newspaper</i>
+      </a>
+    </div>
+  </div>
+
+
+  <div class="mdl-cell mdl-cell--3-col demo-card-square mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-card--expand">
+      <img class="align-center" src='{% static "loksatta-eco-friendly-prizes.jpg" %}' height="200px" width=auto border="0" alt="">
+    </div>
+    <div class="mdl-card__supporting-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Aenan convallis.
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        <b>Loksatta</b>, <i>Winners of Eco Friendly Ganesha</i>
+      </a>
+    </div>
+  </div>
+
+</div>
 
 {% endblock body %}
