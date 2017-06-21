@@ -13,7 +13,7 @@
   <div class="mdl-cell mdl-cell--3-col"></div>
 
   <div class="mdl-cell mdl-cell--4-col--middle align-center">
-		<img src='{{murti.images.first.idol_image.url|default:"/static/official-logo-med.png"}}' height="500">
+		<img src='{{murti.images.first.idol_image.url|default:"/static/official-logo-med.png"}}' height="450">
 	</div>
 
 
@@ -25,34 +25,39 @@
 
 		{% if murti.sp_feature %}
 			<div class="mdl-grid">
-				  <h6 class="mdl-cell mdl-cell--12-col"><i>"{{murti.sp_feature}}"</i></h6>
+				  <h6 class="mdl-cell mdl-cell--12-col"><i>"{{murti.sp_feature|title}}"</i></h6>
 			</div>
 		{% endif %}
 						 
 		<div class="mdl-grid">
-			  <h6 class="mdl-cell mdl-cell--6-col--middle">Height</h6>
+			  <h6 class="mdl-cell mdl-cell--6-col--middle"><b>Height</b></h6>
 			  <h6 class="mdl-cell mdl-cell--6-col--middle">{{murti.height}}</h6>
 		</div>
 				
 		<div class="mdl-grid">
-			  <h6 class="mdl-cell mdl-cell--6-col--middle">Weight</h6>
+			  <h6 class="mdl-cell mdl-cell--6-col--middle"><b>Weight</b></h6>
 			  <h6 class="mdl-cell mdl-cell--6-col--middle">{{murti.weight}}</h6>
 		</div>
 				
 		<div class="mdl-grid">
-			  <h6 class="mdl-cell mdl-cell--6-col--middle">Price</h6>
+			  <h6 class="mdl-cell mdl-cell--6-col--middle"><b>Price</b></h6>
 			  <h6 class="mdl-cell mdl-cell--6-col--middle">{{murti.price}}/- </h6>
 		</div>
 			
 		<div class="mdl-grid">
-			  <h6 class="mdl-cell mdl-cell--6-col--middle">Ingredients</h6>
+			  <h6 class="mdl-cell mdl-cell--6-col--middle"><b>Ingredients</b></h6>
 			  <h6 class="mdl-cell mdl-cell--6-col">
 			  {% for each in murti.material.ingredients.all %}
-			  	{{each.ingredient_name}}{% if not forloop.last %}, {% endif %}
+			  	{{each.ingredient_name|title}}{% if not forloop.last %}, {% endif %}
 			  {% endfor %}
 			  </h6>
 		</div>
 
+		<div class="mdl-grid">
+			  <h6 class="mdl-cell mdl-cell--6-col--middle"><b>Status</b></h6>
+			  <h6 class="mdl-cell mdl-cell--6-col--middle">{{murti.status}}</h6>
+		</div>
+			
 			
 	</div>	
 
