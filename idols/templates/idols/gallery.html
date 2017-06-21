@@ -6,6 +6,15 @@
 {% block head %}
 	<style>
 	.mdl-card{width: auto;}
+	.mdl-grid{margin: initial;}
+	img {
+	opacity: 1;
+	transition: opacity 0.3s;
+	}
+
+	img[data-src] {
+		opacity: 0;
+	}
 	</style>
 {% endblock head %}
 
@@ -14,51 +23,11 @@
 lazy loading of img:
 https://davidwalsh.name/lazyload-image-fade
 https://css-tricks.com/snippets/javascript/lazy-loading-images/
--->
-<!--
-<div class="mdl-grid">
-	<div class="mdl-cell mdl-cell--4-col">
-		<a href="">
-			<div class="mdl-card mdl-shadow--16dp">
-				<div class="mdl-card__media"><img src='{% static "slide-2.jpg" %}' height="200px" border="0"
-					alt="">
-				</div>
-				<div class="mdl-card__title">
-					The Sky Tower is an observation
-				</div>
-			</div>
-		</a>
-	</div>
-	<div class="mdl-cell mdl-cell--4-col">
-		<a href="">
-			<div class="mdl-card mdl-shadow--16dp">
-				<div class="mdl-card__media"><img src='{% static "slide-2.jpg" %}' height="200px" border="0"
-					alt="">
-				</div>
-				<div class="mdl-card__title">
-					The Sky Tower is an observation
-				</div>
-			</div>
-		</a>
-	</div>
-	<div class="mdl-cell mdl-cell--4-col">
-		<a href="">
-			<div class="mdl-card mdl-shadow--16dp">
-				<div class="mdl-card__media"><img src='{% static "slide-2.jpg" %}' height="200px" border="0"
-					alt="">
-				</div>
-				<div class="mdl-card__title">
-					The Sky Tower is an observation
-				</div>
-			</div>
-		</a>
-	</div>
-</div>
--->
+--> 
+    <br/>
 
 	<div class="mdl-grid">
 	{% for mc in all_murti_category %}
-
 	
 	{% if url_name == 'murti_category' %}
 		<a class="mdl-cell mdl-cell--3-col no-anchor" href="{% url url_name mc.category_code %}">
@@ -67,11 +36,7 @@ https://css-tricks.com/snippets/javascript/lazy-loading-images/
 	{% endif %}
 			<div class="mdl-card mdl-shadow--16dp align-center">
 				<div class="mdl-card__media">
-					<!--
-					{# <img class="align-center" src='{{mc.images.idol_image.url|default:"/static/official-logo-med.png"}}' height="200px" width=auto border="0" alt=""> #}
-					{# <img class="align-center" src='{{mc.images.first.idol_image.url|default:"/static/official-logo-med.png"}}' height="200px" width=auto border="0" alt=""> #}
-					-->
-					<img class="align-center" src='{% firstof mc.images.idol_image.url mc.images.first.idol_image.url "/static/official-logo-med.png" %}' height="200px" width=auto border="0" alt="">
+					<img class="align-center" data-src='{% firstof mc.images.idol_image.url mc.images.first.idol_image.url "/static/official-logo-med.png" %}' height="200px" width=auto border="0" alt="">
 				</div>
 				<div class="mdl-card__title">
 					{{mc.murti_category_name}}
@@ -84,5 +49,18 @@ https://css-tricks.com/snippets/javascript/lazy-loading-images/
 
 	{% endfor %}
 	</div>
+
+	<script type="text/javascript">
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+		    // console.log("DOM fully loaded and parsed");
+			[].forEach.call(document.querySelectorAll('img[data-src]'), function(img) {
+				img.setAttribute('src', img.getAttribute('data-src'));
+				img.onload = function() {
+					img.removeAttribute('data-src');
+				};
+			});
+		  });
+	</script>
 
 {% endblock body %}

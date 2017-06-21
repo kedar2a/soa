@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-deep_orange.min.css">
 	<link rel="stylesheet" type="text/css" href="{% static 'soa-style.css' %}">
-  <!-- <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>-->
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
 	{% block head %}
 	{% endblock head %}
@@ -31,11 +31,10 @@
 </head>
 
 <body>
-  <!-- <div class="mdl-layout mdl-js-layout"> -->
-  <div class="mdl-layout">
+  <div class="mdl-layout mdl-js-layout">
   
     <!-- transparent header that draws on top of the layout's background -->
-    <div style="z-index:100;" class="layout-transparent mdl-layout mdl-js-layout">
+    <div class="layout-transparent mdl-layout mdl-js-layout">
 
       <!-- top menu panel -->
       <header class="mdl-layout__header mdl-layout__header--transparent">
@@ -89,8 +88,7 @@
     </div>
     <br/>
     <br/>
-    <br/>
-    <br/>
+    
   	<!-- END of transparent header that draws on top of the layout's background -->
 
     {% block body %}
