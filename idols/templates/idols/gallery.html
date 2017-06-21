@@ -34,7 +34,7 @@ https://css-tricks.com/snippets/javascript/lazy-loading-images/
 	{% elif url_name == 'murti_detail' %}
 		<a class="mdl-cell mdl-cell--3-col no-anchor" href="{% url url_name mc.category.category_code mc.id %}">
 	{% endif %}
-			<div class="mdl-card mdl-shadow--16dp align-center">
+			<div class="mdl-card align-center">
 				<div class="mdl-card__media">
 					<img class="align-center" data-src='{% firstof mc.images.idol_image.url mc.images.first.idol_image.url "/static/official-logo-med.png" %}' height="200px" width=auto border="0" alt="">
 				</div>
