@@ -5,7 +5,7 @@
 
 {% block head %}
 	<style>
-	.mdl-card{width: auto;}
+	.mdl-card{width: 250px;}
 	.mdl-grid{margin: initial;}
 	img {
 	opacity: 1;
@@ -30,13 +30,13 @@ https://css-tricks.com/snippets/javascript/lazy-loading-images/
 	{% for mc in all_murti_category %}
 	
 	{% if url_name == 'murti_category' %}
-		<a class="mdl-cell mdl-cell--3-col no-anchor" href="{% url url_name mc.category_code %}">
+		<a class="mdl-cell mdl-cell--3-col no-anchor" title="Click to see details" href="{% url url_name mc.category_code %}">
 	{% elif url_name == 'murti_detail' %}
-		<a class="mdl-cell mdl-cell--3-col no-anchor" href="{% url url_name mc.category.category_code mc.id %}">
+		<a class="mdl-cell mdl-cell--3-col no-anchor" title="Click to see details" href="{% url url_name mc.category.category_code mc.id %}">
 	{% endif %}
 			<div class="mdl-card align-center">
 				<div class="mdl-card__media">
-					<img class="align-center" data-src='{% firstof mc.images.idol_image.url mc.images.first.idol_image.url "/static/official-logo-med.png" %}' height="200px" width=auto border="0" alt="">
+					<img class="align-center" data-src='{% firstof mc.images.idol_image.url mc.images.first.idol_image.url "/static/official-logo-med.png" %}' height="300px" width=auto border="0" alt="">
 				</div>
 				<div class="mdl-card__title">
 					{{mc.murti_category_name}}

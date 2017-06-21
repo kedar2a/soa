@@ -37,6 +37,7 @@ def murti_category(request, murti_category_code):
     all_category_murtis = Murti.objects.filter(category_id=murti_category_obj.id, year=MURTI_YEAR)
 
     context = {
+        'title': 'Gallery',
         'all_murti_category': all_category_murtis,
         'url_name': 'murti_detail'
     }
@@ -44,12 +45,11 @@ def murti_category(request, murti_category_code):
 
 
 def murti_detail(request, murti_category_code, m_id):
-
-
     template = loader.get_template('idols/murti-detail.html')
     murti_obj = Murti.objects.get(id=m_id)
 
     context = {
+        'title': 'Gallery',
         'murti': murti_obj,
     }
     return HttpResponse(template.render(context, request))
