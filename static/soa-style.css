@@ -73,6 +73,9 @@ footer.mdl-mini-footer{
 	text-align: center;
 }
 
+.text-gray{
+	color: gray;
+}
 .mdl-card__media {
 	/*background-color: lightgray;*/
 	background: url('beige_paper.png') left top repeat;

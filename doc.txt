@@ -11,5 +11,5 @@ Gallery:
 
 - Devlok image
 - P DONE: add video on landing
-- add media
-- add features from shree omkar arts
+- P DONE: add media
+- DONE: add features from shree omkar arts

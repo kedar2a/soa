@@ -7,21 +7,55 @@
 {% block body %}
 
 
-	<div class="mdl-grid">
-		<div class="mdl-cell mdl-cell--6-col">
-			Name: {{murti.murti_name}}
-			<br/>
-			id : {{murti.murti_id}}
-			<br/>
-			height : {{murti.height}}
-			<br/>
-			weight : {{murti.weight}}
-			<br/>
-			price : {{murti.price}} 
+			<h4 class="align-center">{{murti.murti_name}}</h4>
+<div class="mdl-grid" style="margin: initial;">
 
-		</div>
-		<div class="mdl-cell mdl-cell--12-col">
-			<img src='{{murti.images.first.idol_image.url|default:"/static/official-logo-med.png"}}' border="0" alt="" style="width:90%; padding-left:5%;">
-		</div>
+  <div class="mdl-cell mdl-cell--3-col"></div>
+
+  <div class="mdl-cell mdl-cell--4-col--middle align-center">
+		<img src='{{murti.images.first.idol_image.url|default:"/static/official-logo-med.png"}}' height="500">
 	</div>
+
+
+	<div class="mdl-cell mdl-cell--4-col">
+		<div class="mdl-grid">
+			  <h5 class="mdl-cell mdl-cell--6-col--middle">ID</h5>
+			  <h5 class="mdl-cell mdl-cell--6-col--middle">{{murti.murti_id}}</h5>
+		</div>
+
+		{% if murti.sp_feature %}
+			<div class="mdl-grid">
+				  <h6 class="mdl-cell mdl-cell--12-col"><i>"{{murti.sp_feature}}"</i></h6>
+			</div>
+		{% endif %}
+						 
+		<div class="mdl-grid">
+			  <h6 class="mdl-cell mdl-cell--6-col--middle">Height</h6>
+			  <h6 class="mdl-cell mdl-cell--6-col--middle">{{murti.height}}</h6>
+		</div>
+				
+		<div class="mdl-grid">
+			  <h6 class="mdl-cell mdl-cell--6-col--middle">Weight</h6>
+			  <h6 class="mdl-cell mdl-cell--6-col--middle">{{murti.weight}}</h6>
+		</div>
+				
+		<div class="mdl-grid">
+			  <h6 class="mdl-cell mdl-cell--6-col--middle">Price</h6>
+			  <h6 class="mdl-cell mdl-cell--6-col--middle">{{murti.price}}/- </h6>
+		</div>
+			
+		<div class="mdl-grid">
+			  <h6 class="mdl-cell mdl-cell--6-col--middle">Ingredients</h6>
+			  <h6 class="mdl-cell mdl-cell--6-col">
+			  {% for each in murti.material.ingredients.all %}
+			  	{{each.ingredient_name}}{% if not forloop.last %}, {% endif %}
+			  {% endfor %}
+			  </h6>
+		</div>
+
+			
+	</div>	
+
+  <div class="mdl-cell mdl-cell--1-col"></div>
+</div>
 {% endblock body %}
