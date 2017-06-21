@@ -82,17 +82,18 @@
           <a class="mdl-navigation__link" href="{% url 'contact' %}">Contact</a>
         </nav>
       </div>
-      <main class="mdl-layout__content">
-        <div class="page-content"><!-- Your content goes here --></div>
-      </main>
     </div>
     <br/>
     <br/>
     
-  	<!-- END of transparent header that draws on top of the layout's background -->
+    <!-- END of transparent header that draws on top of the layout's background -->
 
-    {% block body %}
-    {% endblock body %}
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        {% block body %}
+        {% endblock body %}
+      </div>
+    </main>
 
     <!-- <script type="text/javascript" src="{% static 'app.js' %}"></script> -->
 
