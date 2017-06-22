@@ -4,6 +4,13 @@
 {% block head %}
 <script type="text/javascript" src="https://cdn.rawgit.com/robinparisi/tingle/master/dist/tingle.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/robinparisi/tingle/master/dist/tingle.min.css">
+<style type="text/css">
+	.tingle-modal--overflow {
+    /*overflow-y: scroll;*/
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+</style>
 {% endblock head %}
 
 {% block body %}
@@ -33,12 +40,12 @@
 						 
 		<div class="mdl-grid">
 			  <h6 class="mdl-cell mdl-cell--6-col--middle"><b>Height</b></h6>
-			  <h6 class="mdl-cell mdl-cell--6-col--middle">{{murti.height}}</h6>
+			  <h6 class="mdl-cell mdl-cell--6-col--middle">{{murti.height}} Inches</h6>
 		</div>
 				
 		<div class="mdl-grid">
 			  <h6 class="mdl-cell mdl-cell--6-col--middle"><b>Weight</b></h6>
-			  <h6 class="mdl-cell mdl-cell--6-col--middle">{{murti.weight}}</h6>
+			  <h6 class="mdl-cell mdl-cell--6-col--middle">{{murti.weight}} Kg</h6>
 		</div>
 				
 		<div class="mdl-grid">
@@ -70,10 +77,10 @@
 	// instanciate new modal
 var modal = new tingle.modal({
     footer: true,
-    stickyFooter: false,
+    // stickyFooter: false,
     closeMethods: ['overlay', 'button', 'escape'],
     closeLabel: "Close",
-    cssClass: ['custom-class-1', 'custom-class-2'],
+    // cssClass: ['custom-class-1', 'custom-class-2'],
     onOpen: function() {
         console.log('modal open');
     },
@@ -89,13 +96,13 @@ var modal = new tingle.modal({
 });
 
 // set content
-modal.setContent('<img class="align-center" style="height: 100vh;" src="{{murti.images.first.idol_image.url}}">');
+modal.setContent('<img class="align-center" style="height: 125vh;" src="{{murti.images.first.idol_image.url}}">');
 
-// // add a button
-// modal.addFooterBtn('Button label', 'tingle-btn tingle-btn--primary', function() {
-//     // here goes some logic
-//     modal.close();
-// });
+// add a button
+modal.addFooterBtn('Close', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function() {
+    // here goes some logic
+    modal.close();
+});
 
 // // add another button
 // modal.addFooterBtn('Dangerous action !', 'tingle-btn tingle-btn--danger', function() {
