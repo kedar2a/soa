@@ -3,11 +3,15 @@
 
 {% block site_title %} - {{title}} {% endblock site_title %}
 
+
 {% block head %}
+<script type="text/javascript" src="https://cdn.rawgit.com/robinparisi/tingle/master/dist/tingle.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/robinparisi/tingle/master/dist/tingle.min.css">
 <style>
   .demo-card-square.mdl-card {
     /*width: 320px;*/
     height: 320px;
+    /*cursor: pointer;*/
   }
   .demo-card-square > .mdl-card__title {
     color: #fff;
@@ -151,5 +155,58 @@
   </div>
 
 </div>
+
+<script type="text/javascript">
+  // instanciate new modal
+  var modal = new tingle.modal({
+      footer: true,
+      // stickyFooter: false,
+      closeMethods: ['overlay', 'button', 'escape'],
+      closeLabel: "Close",
+      // cssClass: ['custom-class-1', 'custom-class-2'],
+      onOpen: function() {
+          console.log('modal open');
+      },
+      onClose: function() {
+          console.log('modal closed');
+      },
+      beforeClose: function() {
+          // here's goes some logic
+          // e.g. save content before closing the modal
+          return true; // close the modal
+        return false; // nothing happens
+      }
+  });
+
+  // set content
+  modal.setContent('hi!');
+
+  // add a button
+  modal.addFooterBtn('Close', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function() {
+      // here goes some logic
+      modal.close();
+  });
+
+  // // add another button
+  // modal.addFooterBtn('Dangerous action !', 'tingle-btn tingle-btn--danger', function() {
+  //     // here goes some logic
+  //     modal.close();
+  // });
+
+  // open modal
+  function openModal(k) {
+    var thisCard = this;
+    modal.setContent()
+    modal.open('kjhkj');
+  }
+
+  // var card = document.getElementsByClassName("demo-card-square");
+  // for (var i = card.length - 1; i >= 0; i--) {
+  //   card[i].onclick = openModal;
+  // };
+
+  // close modal
+  // modal.close();
+</script>
 
 {% endblock body %}
