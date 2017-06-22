@@ -35,10 +35,13 @@ body {
 }
 
 .layout-transparent .mdl-layout__header .mdl-navigation__link.active {
-	border-top: solid 5px #fff;
+	border-top: solid 5px #262626;
 	/*color: #9C27B0;*/
 	/*color: #333;*/
 	font-weight: bold;
+}
+.layout-transparent .mdl-layout__header .mdl-navigation__link.active h5{
+	color: #262626;
 }
 	
 .layout-transparent .mdl-layout__drawer-button {
@@ -73,10 +76,15 @@ footer.mdl-mini-footer{
 	text-align: center;
 }
 
-.text-gray{
-	color: gray;
+.text-dark-gray{
+	color: #0c0c0c;
 }
 
 .cursor-pointer{
 	cursor: pointer;
+}
+
+.h60w90{
+	height: 60vh;
+    max-width: 90vw;
 }
