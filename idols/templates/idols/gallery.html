@@ -42,10 +42,17 @@ https://css-tricks.com/snippets/javascript/lazy-loading-images/
     <br/>
 
 	<div class="mdl-grid">
+		{% if url_name == 'murti_category' %}
+		<h5>Gallery: Click on murti type to see individual murtis of selected type</h5>
+		{% endif %}
+		
+		{% if url_name == 'murti_detail' %}
+		<h5>Gallery: Click on murti to get details</h5>
+		{% endif %}
 	{% for mc in all_murti_category %}
 	
 	{% if url_name == 'murti_category' %}
-		<a class="mdl-cell mdl-cell--3-col no-anchor" title="Click to see details" href="{% url url_name mc.category_code %}">
+		<a class="mdl-cell mdl-cell--3-col no-anchor" title="Click to see murtis of this type" href="{% url url_name mc.category_code %}">
 	{% elif url_name == 'murti_detail' %}
 		<a class="mdl-cell mdl-cell--3-col no-anchor" title="Click to see details" href="{% url url_name mc.category.category_code mc.id %}">
 	{% endif %}
