@@ -33,61 +33,45 @@
 <body>
   <div class="mdl-layout mdl-js-layout">
   
-    <!-- transparent header that draws on top of the layout's background -->
-    <div class="layout-transparent mdl-layout mdl-js-layout">
-
-      <!-- top menu panel -->
-      <header class="mdl-layout__header mdl-layout__header--transparent">
-        <div class="mdl-layout__header-row">
-
-          <!-- Title -->
-          <span class="mdl-layout-title">
-            <a class="no-anchor" href="{% url 'home_slider' %}"> Paper Ganesh</a>
-          </span>
-
-          <!-- <img src="{% static 'small-logo.png' %}"></a> -->
-          <!-- Add spacer, to align navigation to the right -->
-          <div class="mdl-layout-spacer"></div>
-          <!-- Navigation -->
-          <nav class="mdl-navigation">
-            <!-- <a class="mdl-navigation__link active" href="{% url 'home_slider' %}"><h5>Home</h5></a> -->
-            <a class="mdl-navigation__link {% if title == 'Feature' %}active{% endif %}" href="{% url 'feature' %}">
-              <h5>Feature</h5>
-            </a>
-            <a class="mdl-navigation__link {% if title == 'Gallery' %}active{% endif %}" href="{% url 'gallery' %}">
-              <h5>Gallery</h5>
-            </a>
-            <a class="mdl-navigation__link {% if title == 'Aim' %}active{% endif %}" href="{% url 'aim' %}">
-              <h5>Aim</h5>
-            </a>
-            <a class="mdl-navigation__link {% if title == 'Media' %}active{% endif %}" href="{% url 'media' %}">
-              <h5>Media</h5>
-            </a>
-            <a class="mdl-navigation__link {% if title == 'Contact' %}active{% endif %}" href="{% url 'contact' %}">
-              <h5>Contact</h5>
-            </a>
-          </nav>
-        </div>
-      </header>
-
-      <!-- side menu panel -->
-      <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Paper Ganesh</span>
-        <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="{% url 'home_slider' %}">Home</a>
-          <a class="mdl-navigation__link" href="{% url 'feature' %}">Feature</a>
-          <a class="mdl-navigation__link" href="{% url 'gallery' %}">Gallery</a>
-          <a class="mdl-navigation__link" href="{% url 'aim' %}">Aim</a>
-          <a class="mdl-navigation__link" href="{% url 'media' %}">Media</a>
-          <a class="mdl-navigation__link" href="{% url 'contact' %}">Contact</a>
-        </nav>
-      </div>
+	  
+    <!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Title</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="{% url 'feature' %}">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="{% url 'contact' %}">Link</a>
+      </nav>
     </div>
-    <br/>
-    <br/>
-    
-    <!-- END of transparent header that draws on top of the layout's background -->
-
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Title</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="{% url 'feature' %}">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="{% url 'contact' %}">Link</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here --></div>
+  </main>
+</div>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
     <main class="mdl-layout__content">
       <div class="page-content">
         {% block body %}
