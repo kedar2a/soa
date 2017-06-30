@@ -32,11 +32,11 @@
 
 <body>
 	
-	<div class="mdl-layout mdl-js-layout">
+<div class="mdl-layout mdl-js-layout">
   <header class="mdl-layout__header">
     <div class="mdl-layout-icon"></div>
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout__title">Simple Layout</span>
+      <span class="mdl-layout__title">Paper Ganesh</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation">
             <a class="mdl-navigation__link {% if title == 'Feature' %}active{% endif %}" href="{% url 'feature' %}">
@@ -59,7 +59,7 @@
     </div>
   </header>
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout__title">Simple Layout</span>
+    <span class="mdl-layout__title">Paper Ganesh</span>
     <nav class="mdl-navigation">
 	<a class="mdl-navigation__link" href="{% url 'home_slider' %}">Home</a>
           <a class="mdl-navigation__link" href="{% url 'feature' %}">Feature</a>
@@ -67,13 +67,11 @@
           <a class="mdl-navigation__link" href="{% url 'aim' %}">Aim</a>
           <a class="mdl-navigation__link" href="{% url 'media' %}">Media</a>
           <a class="mdl-navigation__link" href="{% url 'contact' %}">Contact</a>
-
     </nav>
   </div>
   <main class="mdl-layout__content">
 	{% block body %}
         {% endblock body %}
-
   </main>
 </div>
 </body>
