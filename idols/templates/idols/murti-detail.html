@@ -67,7 +67,7 @@
 			  <h6 class="mdl-cell mdl-cell--6-col--middle">{{murti.status}}</h6>
 		</div>
 		
-		{% if murti.status == "Available" %}
+		{% if murti.status == "Available" and murti.note %}
 		<div class="mdl-grid">
 			  <h6 class="mdl-cell mdl-cell--12-col--middle">
 				  <a href="{{murti.note}}" class="mdl-button mdl-js-button mdl-button--raised  mdl-button--colored" targe="_blank">Buy Online</a>
