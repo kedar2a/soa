@@ -31,26 +31,14 @@
 </head>
 
 <body>
-  <div class="mdl-layout mdl-js-layout">
-  
-    <!-- transparent header that draws on top of the layout's background -->
-    <div class="layout-transparent mdl-layout mdl-js-layout">
-
-      <!-- top menu panel -->
-      <header class="mdl-layout__header mdl-layout__header--transparent">
-        <div class="mdl-layout__header-row">
-
-          <!-- Title -->
-          <span class="mdl-layout-title">
-            <a class="no-anchor" href="{% url 'home_slider' %}"> Paper Ganesh</a>
-          </span>
-
-          <!-- <img src="{% static 'small-logo.png' %}"></a> -->
-          <!-- Add spacer, to align navigation to the right -->
-          <div class="mdl-layout-spacer"></div>
-          <!-- Navigation -->
-          <nav class="mdl-navigation">
-            <!-- <a class="mdl-navigation__link active" href="{% url 'home_slider' %}"><h5>Home</h5></a> -->
+	
+	<div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout-icon"></div>
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout__title">Simple Layout</span>
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
             <a class="mdl-navigation__link {% if title == 'Feature' %}active{% endif %}" href="{% url 'feature' %}">
               <h5>Feature</h5>
             </a>
@@ -66,58 +54,28 @@
             <a class="mdl-navigation__link {% if title == 'Contact' %}active{% endif %}" href="{% url 'contact' %}">
               <h5>Contact</h5>
             </a>
-          </nav>
-        </div>
-      </header>
 
-      <!-- side menu panel -->
-      <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Paper Ganesh</span>
-        <nav class="mdl-navigation">
-          <!-- <a class="mdl-navigation__link" href="{% url 'home_slider' %}">Home</a> -->
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout__title">Simple Layout</span>
+    <nav class="mdl-navigation">
+	<a class="mdl-navigation__link" href="{% url 'home_slider' %}">Home</a>
           <a class="mdl-navigation__link" href="{% url 'feature' %}">Feature</a>
           <a class="mdl-navigation__link" href="{% url 'gallery' %}">Gallery</a>
           <a class="mdl-navigation__link" href="{% url 'aim' %}">Aim</a>
           <a class="mdl-navigation__link" href="{% url 'media' %}">Media</a>
           <a class="mdl-navigation__link" href="{% url 'contact' %}">Contact</a>
-        </nav>
-      </div>
-    </div>
-    <br/>
-    <br/>
-    
-    <!-- END of transparent header that draws on top of the layout's background -->
 
-    <main class="mdl-layout__content">
-      <div class="page-content">
-        {% block body %}
-        {% endblock body %}
-      </div>
-    </main>
-
-    <!-- <script type="text/javascript" src="{% static 'app.js' %}"></script> -->
-
-    <!-- <footer class="mdl-mini-footer">
-      <div class="mdl-mini-footer__left-section">
-        <div class="mdl-logo">Title</div>
-            <ul class="mdl-mini-footer__link-list">
-              <li><a href="#">Help</a></li>
-              <li><a href="#">Privacy & Terms</a></li>
-          </ul>
-      </div>
-    </footer> -->
-    
-    <!-- 
-    <script type="text/javascript">
-        var button = document.createElement('button');
-        var textNode = document.createTextNode('Click Me!');
-        button.appendChild(textNode);
-        button.className = 'mdl-button mdl-js-button mdl-js-ripple-effect';
-        componentHandler.upgradeElement(button);
-        document.getElementById('container').appendChild(button);
-    </script>
-   -->
+    </nav>
   </div>
+  <main class="mdl-layout__content">
+	{% block body %}
+        {% endblock body %}
+
+  </main>
+</div>
 </body>
 
 </html>
