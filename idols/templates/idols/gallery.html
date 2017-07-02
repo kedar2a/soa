@@ -60,7 +60,7 @@ https://css-tricks.com/snippets/javascript/lazy-loading-images/
 				<div class="mdl-card__media">
 					<img class="align-center" data-src='{% firstof mc.images.idol_image.url mc.images.first.idol_image.url "/static/official-logo-med.png" %}' height="300px" width=auto border="0" alt="">
 				</div>
-				<div class="mdl-card__title">
+				<div class="mdl-card__title {{mc.status}}">
 					{{mc.murti_category_name}}
 					{{mc.murti_name}}
 				</div>
