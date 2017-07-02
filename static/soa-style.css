@@ -93,3 +93,12 @@ footer.mdl-mini-footer{
 	height: 30vh;
     max-width: 90vw;
 }
+
+.Booked:after {
+    content: "Booked";
+    position: absolute;
+    color: gray;
+    font-family: sans-serif;
+    font-size: 60px;
+    opacity: 0.3;
+}
