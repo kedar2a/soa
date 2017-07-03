@@ -58,6 +58,9 @@ https://css-tricks.com/snippets/javascript/lazy-loading-images/
 	{% endif %}
 			<div class="mdl-card align-center">
 				<div class="mdl-card__media">
+					{% if mc.status == "Booked" %}
+						<span class="booked-card">Booked</span>
+					{% endif %}
 					<img class="align-center" data-src='{% firstof mc.images.idol_image.url mc.images.first.idol_image.url "/static/official-logo-med.png" %}' height="300px" width=auto border="0" alt="">
 				</div>
 				<div class="mdl-card__title {{mc.status}}">
