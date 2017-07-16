@@ -3,7 +3,7 @@ from django.template import loader
 
 from idols.models import MurtiCategory, Murti
 from SOA_Project.settings import MURTI_YEAR
-
+from django.views.decorators.cache import cache_page
 
 def home_slider(request):
     template = loader.get_template('idols/home-slider.html')
@@ -18,7 +18,7 @@ def feature(request):
     }
     return HttpResponse(template.render(context, request))    
 
-
+@cache_page(60 * 15)
 def gallery(request):
     all_murti_category = MurtiCategory.objects.all().order_by('murti_category_name')
     template = loader.get_template('idols/gallery.html')
