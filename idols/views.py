@@ -18,7 +18,7 @@ def feature(request):
     }
     return HttpResponse(template.render(context, request))    
 
-@cache_page(60 * 60)
+@cache_page(60 * 60 * 12)
 def gallery(request):
     all_murti_category = MurtiCategory.objects.all().order_by('murti_category_name')
     template = loader.get_template('idols/gallery.html')
@@ -30,7 +30,7 @@ def gallery(request):
     return HttpResponse(template.render(context, request))
 
 
-@cache_page(60 * 60)
+@cache_page(60 * 60 * 12)
 def murti_category(request, murti_category_code):
 
     template = loader.get_template('idols/gallery.html')
