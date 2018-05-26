@@ -30,7 +30,7 @@ class MurtiCategory(models.Model):
     murti_category_name = models.CharField(max_length=50, unique=True)
     category_code = models.CharField(max_length=4, unique=True)
     feature = models.TextField(blank=True, default='')
-    images = models.ForeignKey(MurtiImage, blank=True, null=True)
+    images = models.ForeignKey(MurtiImage, blank=True, null=True, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = "MurtiCategory"
