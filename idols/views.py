@@ -7,7 +7,9 @@ from django.views.decorators.cache import cache_page
 
 def home_slider(request):
     template = loader.get_template('idols/home-slider.html')
-    context = {}
+    context = {
+        'title': 'Home',
+    }
     return HttpResponse(template.render(context, request))
 
 

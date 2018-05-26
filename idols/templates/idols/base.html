@@ -10,7 +10,7 @@
   <meta name="description" content="Eco friendly ganapati idols made out of Papermache. Paper Ganesh. Paper Ganesha">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-	<title>Paper Ganesh {% block site_title %} {% endblock site_title %} </title>
+	<title>Paper Ganesh {% block site_title %} - {{title}} {% endblock site_title %} </title>
 
 	<link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
   
@@ -39,6 +39,9 @@
       <span class="mdl-layout__title">Paper Ganesh</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation">
+            <a class="mdl-navigation__link {% if title == 'Home' %}active{% endif %}" href="{% url 'home_slider' %}">
+              <h5>Home</h5>
+            </a>
             <a class="mdl-navigation__link {% if title == 'Feature' %}active{% endif %}" href="{% url 'feature' %}">
               <h5>Feature</h5>
             </a>
@@ -61,7 +64,7 @@
   <div class="mdl-layout__drawer">
     <span class="mdl-layout__title">Paper Ganesh</span>
     <nav class="mdl-navigation">
-	<a class="mdl-navigation__link" href="{% url 'home_slider' %}">Home</a>
+          <a class="mdl-navigation__link" href="{% url 'home_slider' %}">Home</a>
           <a class="mdl-navigation__link" href="{% url 'feature' %}">Feature</a>
           <a class="mdl-navigation__link" href="{% url 'gallery' %}">Gallery</a>
           <a class="mdl-navigation__link" href="{% url 'aim' %}">Aim</a>

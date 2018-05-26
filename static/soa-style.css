@@ -34,13 +34,13 @@ body {
 	transition: 1s all;
 }
 
-.layout-transparent .mdl-layout__header .mdl-navigation__link.active {
+.mdl-layout__header .mdl-navigation__link.active {
 	border-top: solid 5px #262626;
 	/*color: #9C27B0;*/
 	/*color: #333;*/
 	font-weight: bold;
 }
-.layout-transparent .mdl-layout__header .mdl-navigation__link.active h5{
+.mdl-layout__header .mdl-navigation__link.active h5{
 	color: #262626;
 }
 	
