@@ -1,0 +1,5 @@
+ipdb==0.10.1
+ipython==6.1.0
+ipython-genutils==0.1.0
+locustio==0.8.1
+httpie
