@@ -118,8 +118,9 @@ class Buyer(models.Model):
     address    = models.TextField(blank=True, default='') 
 
     class Meta:
-        verbose_name = "Buyer"
-        verbose_name_plural = "Buyers"
+        verbose_name = 'Buyer'
+        verbose_name_plural = 'Buyers'
+        ordering = ['buyer_name']
 
     def __str__(self):
         return self.buyer_name
