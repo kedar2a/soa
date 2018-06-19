@@ -1,22 +1,21 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.template import loader
-
-from idols.models import MurtiCategory, Murti
-from SOA_Project.settings import MURTI_YEAR
 from django.views.decorators.cache import cache_page
-
-from django.contrib.auth.models import User, Group
+# from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from .serializers import UserSerializer
-# from .serializers import GroupSerializer
 
+from SOA_Project.settings import MURTI_YEAR
+from idols.models import MurtiCategory, Murti, Buyer
+from idols.serializers import BuyerSerializer
 
-class UserViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
-    queryset = User.objects.all().order_by('-date_joined')
-    serializer_class = UserSerializer
+# from .serializers import UserSerializer
+# # from .serializers import GroupSerializer
+# class UserViewSet(viewsets.ModelViewSet):
+#     """
+#     API endpoint that allows users to be viewed or edited.
+#     """
+#     queryset = User.objects.all().order_by('-date_joined')
+#     serializer_class = UserSerializer
 
 
 # class GroupViewSet(viewsets.ModelViewSet):
@@ -25,6 +24,10 @@ class UserViewSet(viewsets.ModelViewSet):
 #     """
 #     queryset = Group.objects.all()
 #     serializer_class = GroupSerializer
+
+def buyers(request):
+    if request.method == 'GET':
+        return JsonResponse(BuyerSerializer(Buyer.objects.all(), many=True).data, safe=False)
 
 
 def home_slider(request):
