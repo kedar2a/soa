@@ -58,6 +58,15 @@ def gallery(request):
 
 
 @cache_page(60 * 60 * 12)
+def featured_gallery(request):
+    template = loader.get_template('idols/featured-gallery.html')
+    context = {
+        'title': 'Featured Gallery',
+    }
+    return HttpResponse(template.render(context, request))
+
+
+@cache_page(60 * 60 * 12)
 def murti_category(request, murti_category_code):
 
     template = loader.get_template('idols/gallery.html')
@@ -83,10 +92,10 @@ def murti_detail(request, murti_category_code, m_id):
     return HttpResponse(template.render(context, request))
 
 
-def aim(request):
-    template = loader.get_template('idols/aim.html')
+def mission(request):
+    template = loader.get_template('idols/mission.html')
     context = {
-        'title': 'Aim',
+        'title': 'Mission',
     }
     return HttpResponse(template.render(context, request))    
 

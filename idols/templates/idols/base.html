@@ -45,11 +45,11 @@
             <a class="mdl-navigation__link {% if title == 'Feature' %}active{% endif %}" href="{% url 'feature' %}">
               <h5>Feature</h5>
             </a>
-            <a class="mdl-navigation__link {% if title == 'Gallery' %}active{% endif %}" href="{% url 'gallery' %}">
+            <a class="mdl-navigation__link {% if title == 'Gallery' or title == 'Featured Gallery' %}active{% endif %}" href="{% url 'gallery' %}">
               <h5>Gallery</h5>
             </a>
-            <a class="mdl-navigation__link {% if title == 'Aim' %}active{% endif %}" href="{% url 'aim' %}">
-              <h5>Aim</h5>
+            <a class="mdl-navigation__link {% if title == 'Mission' %}active{% endif %}" href="{% url 'mission' %}">
+              <h5>Mission</h5>
             </a>
             <a class="mdl-navigation__link {% if title == 'Media' %}active{% endif %}" href="{% url 'media' %}">
               <h5>Media</h5>
@@ -67,7 +67,7 @@
           <a class="mdl-navigation__link" href="{% url 'home_slider' %}">Home</a>
           <a class="mdl-navigation__link" href="{% url 'feature' %}">Feature</a>
           <a class="mdl-navigation__link" href="{% url 'gallery' %}">Gallery</a>
-          <a class="mdl-navigation__link" href="{% url 'aim' %}">Aim</a>
+          <a class="mdl-navigation__link" href="{% url 'mission' %}">Mission</a>
           <a class="mdl-navigation__link" href="{% url 'media' %}">Media</a>
           <a class="mdl-navigation__link" href="{% url 'contact' %}">Contact</a>
     </nav>

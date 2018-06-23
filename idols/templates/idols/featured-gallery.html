@@ -1,0 +1,134 @@
+{% extends 'idols/base.html' %}
+{% load static %}
+
+{% block site_title %} {{title}} {% endblock site_title %}
+
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+<br/>
+<h4 class="text-center">Featured Gallery</h4>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone">
+  	<h5>Select</h5>
+
+  	<h6>Size</h6>
+  	<select>
+	  	<option name="" value="">3 ft</option>
+	  	<option name="" value="">5 ft</option>
+	  	<option name="" value="">7 ft</option>
+  	</select>
+  	<br/>
+  	<h6>Price</h6>
+  	<select>
+	  	<option name="" value="">3000/- To 6000/- </option>
+	  	<option name="" value="">6000/- To 10000/-</option>
+	  	<option name="" value="">10000/- onwards</option>
+  	</select>
+  	<br/>
+  	<h6>Jwellery</h6>
+  	<select>
+	  	<option name="" value="">Yes</option>
+	  	<option name="" value="">No</option>
+  	</select>
+
+  	<br/>
+  	<br/>
+  	<br/>
+	<!-- Raised button with ripple -->
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+	  Show Murtis
+	</button>
+  </div>
+
+
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone">
+  	<div class="mdl-card align-center">
+		<div class="mdl-card__media">
+				<!-- <span class="booked-card">Booked</span> -->
+			<img class="align-center" data-src='{% firstof mc.images.idol_image.url mc.images.first.idol_image.url "/static/official-logo-med.png" %}' height="300px" width=auto border="0" alt="">
+		</div>
+		<div class="mdl-card__title">
+			Murti Category Name
+			Murti Name
+		</div>
+	</div>
+	<br/>
+  	<div class="mdl-card align-center">
+		<div class="mdl-card__media">
+				<!-- <span class="booked-card">Booked</span> -->
+			<img class="align-center" data-src='{% firstof mc.images.idol_image.url mc.images.first.idol_image.url "/static/official-logo-med.png" %}' height="300px" width=auto border="0" alt="">
+		</div>
+		<div class="mdl-card__title">
+			Murti Category Name
+			Murti Name
+		</div>
+	</div>
+  </div>
+
+
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone">
+  	<div class="mdl-card align-center">
+		<div class="mdl-card__media">
+				<!-- <span class="booked-card">Booked</span> -->
+			<img class="align-center" data-src='{% firstof mc.images.idol_image.url mc.images.first.idol_image.url "/static/official-logo-med.png" %}' height="300px" width=auto border="0" alt="">
+		</div>
+		<div class="mdl-card__title">
+			Murti Category Name
+			Murti Name
+		</div>
+	</div>
+	<br/>
+  	<div class="mdl-card align-center">
+		<div class="mdl-card__media">
+				<!-- <span class="booked-card">Booked</span> -->
+			<img class="align-center" data-src='{% firstof mc.images.idol_image.url mc.images.first.idol_image.url "/static/official-logo-med.png" %}' height="300px" width=auto border="0" alt="">
+		</div>
+		<div class="mdl-card__title">
+			Murti Category Name
+		</div>
+	</div>
+  </div>
+
+
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-phone">
+  	<div class="mdl-card align-center">
+		<div class="mdl-card__media">
+				<!-- <span class="booked-card">Booked</span> -->
+			<img class="align-center" data-src='{% firstof mc.images.idol_image.url mc.images.first.idol_image.url "/static/official-logo-med.png" %}' height="300px" width=auto border="0" alt="">
+		</div>
+		<div class="mdl-card__title">
+			Murti Category Name
+		</div>
+	</div>
+	<br/>
+  	<div class="mdl-card align-center">
+		<div class="mdl-card__media">
+				<!-- <span class="booked-card">Booked</span> -->
+			<img class="align-center" data-src='{% firstof mc.images.idol_image.url mc.images.first.idol_image.url "/static/official-logo-med.png" %}' height="300px" width=auto border="0" alt="">
+		</div>
+		<div class="mdl-card__title">
+			Murti Category Name
+		</div>
+	</div>
+  </div>
+
+</div>
+
+
+
+	<script type="text/javascript">
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+		    // console.log("DOM fully loaded and parsed");
+			[].forEach.call(document.querySelectorAll('img[data-src]'), function(img) {
+				img.setAttribute('src', img.getAttribute('data-src'));
+				img.onload = function() {
+					img.removeAttribute('data-src');
+				};
+			});
+		  });
+	</script>
+
+{% endblock body %}
